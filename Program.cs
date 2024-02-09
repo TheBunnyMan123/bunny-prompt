@@ -46,19 +46,15 @@ class bunnyPrompt {
 
     if (exitCode == 0)
     {
-      ProcessStartInfo gitStartInfo = new ProcessStartInfo("git");
+      ProcessStartInfo gitStartInfo = new ProcessStartInfo("git", "rev-parse --is-inside-work-tree");
 
-      gitStartInfo.UseShellExecute = false;
       gitStartInfo.WorkingDirectory = workDir;
-      gitStartInfo.RedirectStandardInput = true;
       gitStartInfo.RedirectStandardOutput = true;
-      gitStartInfo.Arguments = "rev-parse --is-inside-work-tree";
+      gitStartInfo.RedirectStandardError = true;
 
-      Process gitProcess = new Process();
-      gitProcess.StartInfo = gitStartInfo;
-      gitProcess.Start();
+      Process gitProcess = Process.Start(gitStartInfo);
 
-      Boolean.TryParse(gitProcess.StandardOutput.ReadLine(), out isGit);
+      var couldParse = Boolean.TryParse(gitProcess.StandardOutput.ReadLine(), out isGit);
 
       gitProcess.Dispose(); 
     }
