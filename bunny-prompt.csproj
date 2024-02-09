@@ -6,7 +6,6 @@
     <RootNamespace>bunny_prompt</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
-    <PublishSingleFile>true</PublishSingleFile>
     <PublishAot>true</PublishAot>
   </PropertyGroup>
 
