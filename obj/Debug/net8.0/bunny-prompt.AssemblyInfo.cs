@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bunny-prompt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32854432fa20962e6c787805cc40971699bfcf1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("bunny-prompt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bunny-prompt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

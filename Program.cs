@@ -24,12 +24,11 @@ class bunnyPrompt {
   private static string ps1 = "\r\n";
 
   public static void Main() {
-
     string colorTerm = Environment.GetEnvironmentVariable("COLORTERM");
     if (colorTerm == null) {colorTerm = "";}
     if ((colorTerm.ToLower() == "truecolor") || (colorTerm.ToLower() == "24bit")) {trueColor = true;}
 
-    if (trueColor == false) {ps1 = ps1 + "\x1b[1m";}
+    if (trueColor == false) {ps1 = ps1 + @"\[\x1b[1m\]";}
 
     ProcessStartInfo gitStartInfo = new ProcessStartInfo("git");
 
@@ -53,9 +52,9 @@ class bunnyPrompt {
     }
 
     if (trueColor) {
-      ps1 = ps1 + $"{RgbToANSI(138, 173, 244)}{user}{RgbToANSI(202, 211, 245)}@{RgbToANSI(138, 173, 244)}{hostname} ";
+      ps1 = ps1 + @$"{RgbToANSI(138, 173, 244)}\u{RgbToANSI(202, 211, 245)}@{RgbToANSI(138, 173, 244)}\h ";
     }else {
-      ps1 = ps1 + $"\x1b[34m{user}\u001b[37m@\u001b[34m{hostname} ";
+      ps1 = ps1 + @$"\[\033[34m\]\u\[\033[37m\]@\[\033[34m\]\h ";
     }
     
     string[] splitWorkDir = workDir.Split("/");
@@ -73,9 +72,9 @@ class bunnyPrompt {
       }
     }
     if (trueColor) {
-      ps1 = ps1 + $"{RgbToANSI(166, 218, 149)}{String.Join("/", splitWorkDir)}\r\n";
+      ps1 = ps1 + @$"{RgbToANSI(166, 218, 149)}\w\r\n";
     }else {
-      ps1 = ps1 + $"\x1b[32m{String.Join("/", splitWorkDir)}\r\n";
+      ps1 = ps1 + @$"\[\033[32m\]\w\r\n";
     }
 
     if (displayTable.Contains(Display.GitBranch)) {
@@ -97,7 +96,7 @@ class bunnyPrompt {
       if (trueColor) {
         ps1 = ps1 + RgbToANSI(245, 169, 127);
       }else {
-        ps1 = ps1 + "\x1b[33m";
+        ps1 = ps1 + @"\[\x1b[33m\]";
       }
       if (!(branch == null)) {
         ps1 = ps1 + gitIcon + ": " + gitBranchIcon + branch;
@@ -108,12 +107,12 @@ class bunnyPrompt {
       ps1 = ps1 + "\r\n";
     }
 
-    //ps1 = ps1 + $"{RgbToANSI(198, 160, 246)}");
-    ps1 = ps1 + $"{RgbToANSI(202, 211, 245)}> ";
+    //ps1 = ps1 + @$"{RgbToANSI(198, 160, 246)}");
+    ps1 = ps1 + @$"{RgbToANSI(202, 211, 245)}> ";
     Console.Write(ps1);
   }
 
   private static string RgbToANSI(byte r, byte g, byte b) {
-    return $"\x1b[38;2;{r};{g};{b}m";
+    return @$"\[\033[38;2;{r};{g};{b}m\]";
   }
 }
