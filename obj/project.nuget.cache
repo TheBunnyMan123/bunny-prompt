@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "PkW8v+1wGWCmB7QAjo4Ht79ONrNRTEKqHhkXVZphpOGD1B0LLfcuZYLxRklcyQmdxyInui52jAEuSe72yLWX5g==",
+  "success": true,
+  "projectFilePath": "/home/tegue/bunny-prompt/bunny-prompt.csproj",
+  "expectedPackageFiles": [
+    "/home/tegue/.nuget/packages/microsoft.dotnet.ilcompiler/8.0.1/microsoft.dotnet.ilcompiler.8.0.1.nupkg.sha512",
+    "/home/tegue/.nuget/packages/microsoft.net.illink.tasks/8.0.1/microsoft.net.illink.tasks.8.0.1.nupkg.sha512",
+    "/home/tegue/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.1/microsoft.aspnetcore.app.ref.8.0.1.nupkg.sha512",
+    "/home/tegue/.nuget/packages/runtime.linux-x64.microsoft.dotnet.ilcompiler/8.0.1/runtime.linux-x64.microsoft.dotnet.ilcompiler.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
