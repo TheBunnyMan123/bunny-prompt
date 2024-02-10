@@ -10,6 +10,7 @@ PROMPT_COMMAND=prompt
 ```
 
 Check releases for the binary and an arch PKGBUILD
+
 This requires a nerd font
 
 ### Preview
