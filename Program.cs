@@ -27,7 +27,7 @@ class bunnyPrompt {
 
   private static bool isGit = false;
 
-  private static string ps1 = "\r\n";
+  private static string ps1 = "";
 
   public static void Main() {
     string colorTerm = Environment.GetEnvironmentVariable("COLORTERM");
